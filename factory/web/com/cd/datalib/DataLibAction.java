@@ -45,7 +45,6 @@ public class DataLibAction {
     @Qualifier("PrivilegeService")
     private PrivilegeService privilegeService;
 
-	final private static String P_VIEW = "VIEW";
 	final private static String P_UPLOAD = "UPLOAD";
 	final private static String P_DOWNLOAD = "DOWNLOAD";
 

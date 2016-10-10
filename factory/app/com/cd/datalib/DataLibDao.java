@@ -25,6 +25,9 @@ import com.cd.dao.BaseDaoImpl;
 public class DataLibDao extends BaseDaoImpl<DataLib> {
 
 	private PropertySelector mySelector = new PropertySelector() {
+		
+		private static final long serialVersionUID = 6931510977307493169L;
+
 		public boolean include(Object value, String proName, Type type) {
 			return value != null
 					&& (((value instanceof String) && !("").equals(value)) 
@@ -32,12 +35,10 @@ public class DataLibDao extends BaseDaoImpl<DataLib> {
 		}
 	};
 	
-    public List<DataLib> getDataLibListByType(final DataLib dataLib, final Date uploadTimeStart, final Date uploadTimeEnd, final Map<String, String> geLeMap, final int start, final int limit) {
-    	final String hql = "from DataLib d where d.libType=:libType and d.uploadTime between :uploadTimeStart and :uploadTimeEnd";
-    	
-    	return 
-	    	this.getHibernateTemplate().execute(new HibernateCallback<List<DataLib>>() {
-	    		
+	public List<DataLib> getDataLibListByType(final DataLib dataLib, final Date uploadTimeStart, final Date uploadTimeEnd, final Map<String, String> geLeMap, final int start, final int limit) {
+		return 
+			this.getHibernateTemplate().execute(new HibernateCallback<List<DataLib>>() {
+				
 				@SuppressWarnings("unchecked")
 				@Override
 				public List<DataLib> doInHibernate(Session session)
@@ -146,16 +147,13 @@ public class DataLibDao extends BaseDaoImpl<DataLib> {
 //					.setMaxResults(limit)
 //					.list();
 				}
-	    		
+				
 			});
-    }
-    
-    public int getDataLibCountByType(final DataLib dataLib, final Date uploadTimeStart, final Date uploadTimeEnd, final Map<String, String> geLeMap) {
-        final String hql = "select count(*) from DataLib d where d.libType=:libType";
-        
-        return
-        this.getHibernateTemplate().execute(new HibernateCallback<Long>() {
-    		
+	}
+	
+	public int getDataLibCountByType(final DataLib dataLib, final Date uploadTimeStart, final Date uploadTimeEnd, final Map<String, String> geLeMap) {
+		return this.getHibernateTemplate().execute(new HibernateCallback<Long>() {
+			
 			@Override
 			public Long doInHibernate(Session session)
 					throws HibernateException, SQLException {
@@ -252,19 +250,16 @@ public class DataLibDao extends BaseDaoImpl<DataLib> {
 				c.setProjection(Projections.rowCount());
 				return (Long) c.uniqueResult();
 				
-//				return (Long) session.createQuery(hql)
-//				.setString("libType", dataLib.getLibType())
-//				.uniqueResult();
 			}
-    		
+			
 		}).intValue();
-    }
-    
-    @SuppressWarnings("unchecked")
-    public List<DataLib> getUserListByLoginName(String loginName) {
-        String hql = "from DataLib u where u.loginName = '" + loginName + "'";
-        return (List<DataLib>) this.find(hql);
-        
-    }
-    
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<DataLib> getUserListByLoginName(String loginName) {
+		String hql = "from DataLib u where u.loginName = '" + loginName + "'";
+		return (List<DataLib>) this.find(hql);
+		
+	}
+	
 }

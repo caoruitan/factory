@@ -30,7 +30,6 @@ public class DepartmentService {
     }
 
     public void createDepartment(String departmentName, String description, String parentId) {
-        Department parent = this.getDepartment(parentId);
         Department dep = new Department();
         dep.setDepartmentName(departmentName);
         dep.setDescription(description);
