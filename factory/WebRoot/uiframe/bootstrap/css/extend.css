@@ -1,0 +1,14 @@
+.container {
+    width : 95%
+}
+.panel-header {
+    background: #EAEAEA;
+    background-image: -webkit-gradient(linear,50% 0,50% 100%,color-stop(0%,#FDFDFD),color-stop(100%,#EAEAEA));
+    background-image: -webkit-linear-gradient(top,#FDFDFD,#EAEAEA);
+    background-image: -moz-linear-gradient(top,#FDFDFD,#EAEAEA);
+    background-image: -o-linear-gradient(top,#FDFDFD,#EAEAEA);
+    background-image: linear-gradient(top,#FDFDFD,#EAEAEA);
+    text-shadow: 0 1px white;
+    color: #636363;
+    font-weight: 600;
+}

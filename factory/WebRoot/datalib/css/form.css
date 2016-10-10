@@ -1,0 +1,19 @@
+#createDataLibModal.modal{ 
+ width: 960px; 
+ margin:0px 0px 0px -500px;
+}
+
+#searchDataLibModal.modal{ 
+ width: 960px; 
+ margin:0px 0px 0px -500px;
+}
+
+#updateDataLibModal.modal{ 
+ width: 960px; 
+ margin:0px 0px 0px -500px;
+}
+
+#approvalHistoryModal.modal{ 
+ width: 800px; 
+ margin:0px 0px 0px -420px;
+}
