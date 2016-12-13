@@ -198,70 +198,70 @@
             	},
             	
             	instrumentName:{
-            		required:true,
+            		// required:true,
                     maxlength : 50
             	},
             	testMethod:{
-            		required:true,
+            		// required:true,
                     maxlength : 50
             	},
             	testWay:{
-            		required:true,
+            		// required:true,
                     maxlength : 50
             	},
 
             	sampleQuantity:{
-            		required:true,
+            		// required:true,
             		number:true,
                     maxlength : 25
             	},
             	riseProgram:{
-            		required:true,
+            		// required:true,
                     maxlength : 50
             	},
             	auraForm:{
-            		required:true,
+            		// required:true,
                     maxlength : 50
             	},
             	auraRate:{
-            		required:true,
+            		// required:true,
             		number:true,
                     maxlength : 25
             	},
             	
             	btnUploadFile:{
-            		required:true
+            		// required:true
             	},
             	activationEnergy:{
-            		required:true,
+            		// required:true,
             		number:true,
                     maxlength : 25
             	},
             	preExponentialFactor:{
-            		required:true,
+            		// required:true,
             		number:true,
                     maxlength : 25
             	},
             	reactionOrder:{
-            		required:true,
+            		// required:true,
             		number:true,
                     maxlength : 25
             	},
             	
                 author: {
-                    required: true,
+                	// required: true,
                     maxlength : 50
                 },
                 org:{
-            		required:true,
+                	// required:true,
                     maxlength : 100
             	},
             	uploadTime:{
-            		required:true,
+            		// required:true,
                     maxlength : 50
             	},
             	linkInfo:{
-            		required:true,
+            		// required:true,
                     maxlength : 50
             	}
             },
