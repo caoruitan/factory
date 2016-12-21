@@ -374,6 +374,7 @@
                                 <option value="TPD/TPR">TPD/TPR</option>
                                 <option value="电化学">电化学</option>
                                 <option value="TCD">TCD</option>
+                                <option value="热重">热重</option>
                             </select>
                         </div>
                     </div>

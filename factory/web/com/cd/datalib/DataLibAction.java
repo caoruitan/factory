@@ -174,6 +174,7 @@ public class DataLibAction {
 			if (null == dataLib.getUploadTime()) {
 				dataLib.setUploadTime(new Date());
 			}
+			dataLib.setCreateTime(new Date());
 
 			this.dataLibService.createDataLib(dataLib);
 		} catch (Exception e) {

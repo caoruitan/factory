@@ -468,6 +468,7 @@
 	                                <option value="TPD/TPR">TPD/TPR</option>
 	                                <option value="电化学">电化学</option>
 	                                <option value="TCD">TCD</option>
+	                                <option value="热重">热重</option>
                                 </c:if>
                                 <c:if test="${dataLib.testWay eq '红外' }">
 	                                <option value="质谱">质谱</option>
@@ -475,6 +476,7 @@
 	                                <option value="TPD/TPR">TPD/TPR</option>
 	                                <option value="电化学">电化学</option>
 	                                <option value="TCD">TCD</option>
+	                                <option value="热重">热重</option>
                                 </c:if>
                                 <c:if test="${dataLib.testWay eq 'TPD/TPR' }">
 	                                <option value="质谱">质谱</option>
@@ -482,6 +484,7 @@
 	                                <option value="TPD/TPR" selected="selected">TPD/TPR</option>
 	                                <option value="电化学">电化学</option>
 	                                <option value="TCD">TCD</option>
+	                                <option value="热重">热重</option>
                                 </c:if>
                                 <c:if test="${dataLib.testWay eq '电化学' }">
 	                                <option value="质谱">质谱</option>
@@ -489,6 +492,7 @@
 	                                <option value="TPD/TPR">TPD/TPR</option>
 	                                <option value="电化学" selected="selected">电化学</option>
 	                                <option value="TCD">TCD</option>
+	                                <option value="热重">热重</option>
                                 </c:if>
                                 <c:if test="${dataLib.testWay eq 'TCD' }">
 	                                <option value="质谱">质谱</option>
@@ -496,6 +500,15 @@
 	                                <option value="TPD/TPR">TPD/TPR</option>
 	                                <option value="电化学">电化学</option>
 	                                <option value="TCD" selected="selected">TCD</option>
+	                                <option value="热重">热重</option>
+                                </c:if>
+                                <c:if test="${dataLib.testWay eq '热重' }">
+	                                <option value="质谱">质谱</option>
+	                                <option value="红外">红外</option>
+	                                <option value="TPD/TPR">TPD/TPR</option>
+	                                <option value="电化学">电化学</option>
+	                                <option value="TCD">TCD</option>
+	                                <option value="热重" selected="selected">热重</option>
                                 </c:if>
                             </select>
                         </div>

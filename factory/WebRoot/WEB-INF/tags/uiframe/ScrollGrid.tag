@@ -28,6 +28,8 @@
         <li id="<%=id%>PrePageLi" class="disabled"><a id="<%=id%>PrePageBtn" href="#">上一页</a></li>
         <li class="active"><a id="<%=id%>PageField" href="#">第1/1页</a></li>
         <li id="<%=id%>NextPageLi"><a id="<%=id%>NextPageBtn" href="#">下一页</a></li>
+        <li>&nbsp;&nbsp;&nbsp;</li>
+        <li>跳转至&nbsp;<input id="<%=id%>PageInput" type="text" style="width:30px;"></input>&nbsp;页</li>
     </ul>
 </div>
 
@@ -78,7 +80,12 @@
                 $("#<%=id%>PrePageBtn").unbind("click");
                 $("#<%=id%>NextPageLi").addClass("disabled");
                 $("#<%=id%>NextPageBtn").unbind("click");
+                $("#<%=id%>PageInput").addClass("disabled");
+                $("#<%=id%>PageInput").unbind("blur");
             } else {
+                $("#<%=id%>PrePageBtn").unbind("click");
+                $("#<%=id%>NextPageBtn").unbind("click");
+                $("#<%=id%>PageInput").unbind("blur");
                 $("#<%=id%>PageField").text("第 " + this.currentPage + "/" + this.totalPage + " 页");
                 if(this.currentPage == 1) {
                     $("#<%=id%>PrePageLi").addClass("disabled");
@@ -94,6 +101,8 @@
                     $("#<%=id%>NextPageLi").removeClass("disabled");
                     $("#<%=id%>NextPageBtn").on("click", this.nextPage);
                 }
+                $("#<%=id%>PageInput").removeClass("disabled");
+                $("#<%=id%>PageInput").on("blur", this.turnToPage);
             }
         },
         nextPage : function() {
@@ -104,6 +113,17 @@
         prePage : function() {
             var param = grid.baseParams;
             grid.baseParams.start = grid.baseParams.start - grid.baseParams.limit;
+            grid.load(param);
+        },
+        turnToPage : function() {
+            var curPage = $("#<%=id%>PageInput").val();
+            if(curPage < 1 || isNaN(curPage)) {
+                curPage = 1
+            } else if (curPage > grid.totalPage) {
+                curPage = grid.totalPage;
+            }
+            var param = grid.baseParams;
+            grid.baseParams.start = grid.baseParams.limit * (curPage - 1);
             grid.load(param);
         }
     }

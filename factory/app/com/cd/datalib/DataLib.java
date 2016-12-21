@@ -95,7 +95,9 @@ public class DataLib {
 	private Date uploadTime;
 	/** 联系信息 */
 	private String linkInfo;
-
+	/** 创建时间 */
+	private Date createTime;
+	
 	@Id
 	@GeneratedValue(generator = "paymentableGenerator")
 	@GenericGenerator(name = "paymentableGenerator", strategy = "guid")
@@ -264,8 +266,8 @@ public class DataLib {
 		return this.org;
 	}
 
-	@Column(name = "UPLOAD_TIME", length = 100, nullable = false)
-	@Temporal(TemporalType.DATE)
+	@Column(name = "UPLOAD_TIME", nullable = false)
+	@Temporal(TemporalType.TIMESTAMP)
 	public Date getUploadTime() {
 		return this.uploadTime;
 	}
@@ -273,6 +275,11 @@ public class DataLib {
 	@Column(name = "LINK_INFO", length = 100, nullable = true)
 	public String getLinkInfo() {
 		return this.linkInfo;
+	}
+
+	@Column(name = "CREATE_TIME")
+	public Date getCreateTime() {
+		return createTime;
 	}
 
 	public void setId(String id) {
@@ -417,5 +424,9 @@ public class DataLib {
 
 	public void setLinkInfo(String linkInfo) {
 		this.linkInfo = linkInfo;
+	}
+
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
 	}
 }

@@ -136,8 +136,9 @@ public class DataLibDao extends BaseDaoImpl<DataLib> {
 					c.setFirstResult(start);
 					c.setMaxResults(limit);
 					
-					c.addOrder(Order.desc("uploadTime"));
+					c.addOrder(Order.desc("createTime"));
 					
+					System.out.println(c.list());
 					return c.list();
 //					return session.createQuery(hql)
 //					.setString("libType", dataLib.getLibType())
