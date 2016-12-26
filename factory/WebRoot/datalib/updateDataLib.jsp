@@ -278,6 +278,7 @@
                 <input id="id" name="id" type="hidden" value="${dataLib.id}" />
                 <input id="libType" name="libType" type="hidden" value="${dataLib.libType}" />
                 <input id="status" name="status" type="hidden" value="${dataLib.status }" />
+                <input id="createTime" name="createTime" type="hidden" value="${dataLib.createTime}">
                 <fieldset>
                     <legend><i class="icon-tasks icon-black" style="line-height:40px"></i> 反应物</legend>
                     <div class="control-group">
@@ -523,7 +524,7 @@
                             	<input id="sampleQuantity" name="sampleQuantity" type="text" placeholder="样品量"/>
                         	</c:if>
                         	<c:if test="${not empty dataLib.sampleQuantity }">
-                            	<input id="sampleQuantity" name="sampleQuantity" type="text" value="<fmt:formatNumber value="${dataLib.sampleQuantity}" pattern="#,##0.#"></fmt:formatNumber>"/>
+                            	<input id="sampleQuantity" name="sampleQuantity" type="text" value="${dataLib.sampleQuantity}"/>
                         	</c:if>
                         </div>
                     </div>
@@ -556,7 +557,7 @@
                             	<input id="auraRate" name="auraRate" type="text" placeholder="气体流量" />
                         	</c:if>
                         	<c:if test="${not empty dataLib.auraRate }">
-                            	<input id="auraRate" name="auraRate" type="text" value="<fmt:formatNumber value="${dataLib.auraRate}" pattern="#,##0.#"></fmt:formatNumber>"/>
+                            	<input id="auraRate" name="auraRate" type="text" value="${dataLib.auraRate}"/>
                         	</c:if>
                         </div>
                     </div>
@@ -635,7 +636,7 @@
                                 	<input id="activationEnergy" name="activationEnergy" type="text" placeholder="活化能" />
                             	</c:if>
                             	<c:if test="${not empty dataLib.activationEnergy }">
-                                	<input id="activationEnergy" name="activationEnergy" type="text" value="<fmt:formatNumber value="${dataLib.activationEnergy}" pattern="#,##0.#"></fmt:formatNumber>"/>
+                                	<input id="activationEnergy" name="activationEnergy" type="text" value="${dataLib.activationEnergy}"/>
                             	</c:if>
                             </div>
                         </div>
@@ -646,7 +647,7 @@
                                 	<input id="preExponentialFactor" name="preExponentialFactor" type="text" placeholder="指前因子" />
                             	</c:if>
                             	<c:if test="${not empty dataLib.preExponentialFactor }">
-                                	<input id="preExponentialFactor" name="preExponentialFactor" type="text" value="<fmt:formatNumber value="${dataLib.preExponentialFactor}" pattern="#,##0.#"></fmt:formatNumber>"/>
+                                	<input id="preExponentialFactor" name="preExponentialFactor" type="text" value="${dataLib.preExponentialFactor}"/>
                             	</c:if>
                             </div>
                         </div>
@@ -657,7 +658,7 @@
                                 	<input id="reactionOrder" name="reactionOrder" type="text" placeholder="反应级数" />
                             	</c:if>
                             	<c:if test="${not empty dataLib.reactionOrder }">
-                                	<input id="reactionOrder" name="reactionOrder" type="text" value="<fmt:formatNumber value="${dataLib.reactionOrder}" pattern="#,##0.#"></fmt:formatNumber>"/>
+                                	<input id="reactionOrder" name="reactionOrder" type="text" value="${dataLib.reactionOrder}"/>
                             	</c:if>
                             </div>
                         </div>
@@ -730,7 +731,7 @@
                         <label class="control-label" for="uploadTime">上传时间</label>
                         <div class="controls">
                             <div id="datetimepicker2" class="input-append date">
-                                <input type="text" id="uploadTime" name="uploadTime" value="${dataLib.uploadTime }" class="add-on" style="width:209px; text-align:left;" readonly></input>
+                                <input type="text" id="uploadTime" name="uploadTime" value='<fmt:formatDate value="${dataLib.uploadTime }" type="date"/>' class="add-on" style="width:209px; text-align:left;" readonly></input>
                             </div>
                         </div>
                     </div>

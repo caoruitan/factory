@@ -1,6 +1,5 @@
 package com.cd.datalib;
 
-import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -51,24 +50,24 @@ public class DataLib {
 	private String testWay;
 
 	/** 样品量 */
-	private BigDecimal sampleQuantity;
+	private String sampleQuantity;
 	/** 升温程序 */
 	private String riseProgram;
 	/** 气氛组成 */
 	private String auraForm;
 	/** 气体流量 */
-	private BigDecimal auraRate;
+	private String auraRate;
 
 	/** 催化剂种类 */
 	private String catalystKind;
 	/** 反应温度/还原温度 */
-	private BigDecimal reactiont;
+	private String reactiont;
 	/** 反应时间/还原时间 */
-	private BigDecimal reactionTime;
+	private String reactionTime;
 	/** 负压 */
-	private BigDecimal negativePressure;
+	private String negativePressure;
 	/** 偏压 */
-	private BigDecimal forwardPressure;
+	private String forwardPressure;
 
 	/** 动力学分析方法 */
 	private String analyzeMethod;
@@ -77,11 +76,11 @@ public class DataLib {
 	/** 图表——文件名称 */
 	private String chartFileName;
 	/** 实际数值-活化能 */
-	private BigDecimal activationEnergy;
+	private String activationEnergy;
 	/** 实际数值-指前因子 */
-	private BigDecimal preExponentialFactor;
+	private String preExponentialFactor;
 	/** 实际数值-反应级数 */
-	private BigDecimal reactionOrder;
+	private String reactionOrder;
 	/** 原始数据——文件ID数组，以,分隔 */
 	private String originalDataFileIds;
 	/** 原始数据——文件名称数组，以,分隔 */
@@ -177,7 +176,7 @@ public class DataLib {
 	}
 
 	@Column(name = "SAMPLE_QUANTITY", length = 100, nullable = true)
-	public BigDecimal getSampleQuantity() {
+	public String getSampleQuantity() {
 		return this.sampleQuantity;
 	}
 
@@ -192,7 +191,7 @@ public class DataLib {
 	}
 
 	@Column(name = "AURA_RATE", length = 100, nullable = true)
-	public BigDecimal getAuraRate() {
+	public String getAuraRate() {
 		return this.auraRate;
 	}
 	@Column(name = "CATALYST_KIND", length = 100, nullable = true)
@@ -200,19 +199,19 @@ public class DataLib {
 		return this.catalystKind;
 	}
 	@Column(name = "REACTION_T", length = 100, nullable = true)
-	public BigDecimal getReactiont() {
+	public String getReactiont() {
 		return this.reactiont;
 	}
 	@Column(name = "REACTION_TIME", length = 100, nullable = true)
-	public BigDecimal getReactionTime() {
+	public String getReactionTime() {
 		return this.reactionTime;
 	}
 	@Column(name = "FORWARD_PRESSURE", length = 100, nullable = true)
-	public BigDecimal getForwardPressure() {
+	public String getForwardPressure() {
 		return this.forwardPressure;
 	}
 	@Column(name = "NEGATIVE_PRESSURE", length = 100, nullable = true)
-	public BigDecimal getNegativePressure() {
+	public String getNegativePressure() {
 		return this.negativePressure;
 	}
 
@@ -232,17 +231,17 @@ public class DataLib {
 	}
 
 	@Column(name = "ACTIVATION_ENERGY", length = 100, nullable = true)
-	public BigDecimal getActivationEnergy() {
+	public String getActivationEnergy() {
 		return this.activationEnergy;
 	}
 
 	@Column(name = "PREEXPONENTIAL_FACTOR", length = 100, nullable = true)
-	public BigDecimal getPreExponentialFactor() {
+	public String getPreExponentialFactor() {
 		return this.preExponentialFactor;
 	}
 
 	@Column(name = "REACTION_ORDER", length = 100, nullable = true)
-	public BigDecimal getReactionOrder() {
+	public String getReactionOrder() {
 		return this.reactionOrder;
 	}
 
@@ -342,7 +341,7 @@ public class DataLib {
 		this.testWay = testWay;
 	}
 
-	public void setSampleQuantity(BigDecimal sampleQuantity) {
+	public void setSampleQuantity(String sampleQuantity) {
 		this.sampleQuantity = sampleQuantity;
 	}
 
@@ -354,7 +353,7 @@ public class DataLib {
 		this.auraForm = auraForm;
 	}
 
-	public void setAuraRate(BigDecimal auraRate) {
+	public void setAuraRate(String auraRate) {
 		this.auraRate = auraRate;
 	}
 
@@ -362,19 +361,19 @@ public class DataLib {
 		this.catalystKind = catalystKind;
 	}
 
-	public void setReactiont(BigDecimal reactiont) {
+	public void setReactiont(String reactiont) {
 		this.reactiont = reactiont;
 	}
 
-	public void setReactionTime(BigDecimal reactionTime) {
+	public void setReactionTime(String reactionTime) {
 		this.reactionTime = reactionTime;
 	}
 
-	public void setForwardPressure(BigDecimal forwardPressure) {
+	public void setForwardPressure(String forwardPressure) {
 		this.forwardPressure = forwardPressure;
 	}
 
-	public void setNegativePressure(BigDecimal negativePressure) {
+	public void setNegativePressure(String negativePressure) {
 		this.negativePressure = negativePressure;
 	}
 
@@ -390,15 +389,15 @@ public class DataLib {
 		this.chartFileName = chartFileName;
 	}
 
-	public void setActivationEnergy(BigDecimal activationEnergy) {
+	public void setActivationEnergy(String activationEnergy) {
 		this.activationEnergy = activationEnergy;
 	}
 
-	public void setPreExponentialFactor(BigDecimal preExponentialFactor) {
+	public void setPreExponentialFactor(String preExponentialFactor) {
 		this.preExponentialFactor = preExponentialFactor;
 	}
 
-	public void setReactionOrder(BigDecimal reactionOrder) {
+	public void setReactionOrder(String reactionOrder) {
 		this.reactionOrder = reactionOrder;
 	}
 

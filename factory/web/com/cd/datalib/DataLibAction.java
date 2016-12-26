@@ -236,6 +236,37 @@ public class DataLibAction {
 	@RequestMapping(value="updateDataLib")
     public void updateDataLib(DataLib dataLib, HttpServletRequest request, HttpServletResponse response) {
         JSONObject obj = new JSONObject();
+        DataLib updateDataLib = this.dataLibService.getDataLib(dataLib.getId());
+        updateDataLib.setActivationEnergy(dataLib.getActivationEnergy());
+        updateDataLib.setAge(dataLib.getAge());
+        updateDataLib.setAnalyzeMethod(dataLib.getAnalyzeMethod());
+        updateDataLib.setAuraForm(dataLib.getAuraForm());
+        updateDataLib.setAuraRate(dataLib.getAuraRate());
+        updateDataLib.setAuthor(dataLib.getAuthor());
+        updateDataLib.setCatalystKind(dataLib.getCatalystKind());
+        updateDataLib.setChartFileId(dataLib.getChartFileId());
+        updateDataLib.setCountry(dataLib.getCountry());
+        updateDataLib.setDistrict(dataLib.getDistrict());
+        updateDataLib.setFatKind(dataLib.getFatKind());
+        updateDataLib.setForwardPressure(dataLib.getForwardPressure());
+        updateDataLib.setInstrumentName(dataLib.getInstrumentName());
+        updateDataLib.setInstrumentType(dataLib.getInstrumentType());
+        updateDataLib.setInstrumentVendor(dataLib.getInstrumentVendor());
+        updateDataLib.setLibType(dataLib.getLibType());
+        updateDataLib.setLinkInfo(dataLib.getLinkInfo());
+        updateDataLib.setNegativePressure(dataLib.getNegativePressure());
+        updateDataLib.setOrg(dataLib.getOrg());
+        updateDataLib.setPhysicalParamFileId(dataLib.getPhysicalParamFileId());
+        updateDataLib.setPreExponentialFactor(dataLib.getPreExponentialFactor());
+        updateDataLib.setReactionOrder(dataLib.getReactionOrder());
+        updateDataLib.setReactiont(dataLib.getReactiont());
+        updateDataLib.setReactionTime(dataLib.getReactionTime());
+        updateDataLib.setRiseProgram(dataLib.getRiseProgram());
+        updateDataLib.setSampleQuantity(dataLib.getSampleQuantity());
+        updateDataLib.setStatus(dataLib.getStatus());
+        updateDataLib.setTestMethod(dataLib.getTestMethod());
+        updateDataLib.setTestWay(dataLib.getTestWay());
+        updateDataLib.setThinKind(dataLib.getThinKind());
 
 		try {
 			String[] originalDataFileIdArr = request.getParameterValues("originalDataFileIdStr");
@@ -252,29 +283,29 @@ public class DataLibAction {
 					Attachment attachment = this.attachmentService.getAttachmentIndex(originalDataFileIdArr[i]);
 					originalDataFileNameStr += (attachment.getFileName() + seprator);
 				}
-				dataLib.setOriginalDataFileIds(originalDataFileIdStr);
-				dataLib.setOriginalDataFileNames(originalDataFileNameStr);
+				updateDataLib.setOriginalDataFileIds(originalDataFileIdStr);
+				updateDataLib.setOriginalDataFileNames(originalDataFileNameStr);
 			}
 
-			if (StringUtils.isNotEmpty(dataLib.getPhysicalParamFileId())) {
-				Attachment attachment = this.attachmentService.getAttachmentIndex(dataLib.getPhysicalParamFileId());
-				dataLib.setPhysicalParamFileName(attachment.getFileName());
+			if (StringUtils.isNotEmpty(updateDataLib.getPhysicalParamFileId())) {
+				Attachment attachment = this.attachmentService.getAttachmentIndex(updateDataLib.getPhysicalParamFileId());
+				updateDataLib.setPhysicalParamFileName(attachment.getFileName());
 			}
 
-			if (StringUtils.isNotEmpty(dataLib.getChartFileId())) {
-				Attachment attachment = this.attachmentService.getAttachmentIndex(dataLib.getChartFileId());
-				dataLib.setChartFileName(attachment.getFileName());
+			if (StringUtils.isNotEmpty(updateDataLib.getChartFileId())) {
+				Attachment attachment = this.attachmentService.getAttachmentIndex(updateDataLib.getChartFileId());
+				updateDataLib.setChartFileName(attachment.getFileName());
 			}
 
-			if (StringUtils.isEmpty(dataLib.getAuthor())) {
+			if (StringUtils.isEmpty(updateDataLib.getAuthor())) {
 				LoginUser user = (LoginUser) request.getSession(true).getAttribute(LoginSessionKey.LOGIN_SESSION_KEY);
-				dataLib.setAuthor(user.getUserName());
+				updateDataLib.setAuthor(user.getUserName());
 			}
-			if (null == dataLib.getUploadTime()) {
-				dataLib.setUploadTime(new Date());
+			if (null == updateDataLib.getUploadTime()) {
+				updateDataLib.setUploadTime(new Date());
 			}
-
-			this.dataLibService.updateDataLib(dataLib);
+			
+			this.dataLibService.updateDataLib(updateDataLib);
 		} catch (Exception e) {
 			e.printStackTrace();
 

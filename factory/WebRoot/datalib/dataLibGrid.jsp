@@ -32,10 +32,10 @@
         <td>${dataLib.testMethod}</td>
         <td>${dataLib.testWay}</td>
         
-        <td><fmt:formatNumber value="${dataLib.sampleQuantity}" pattern="#,##0.#"></fmt:formatNumber></td>
+        <td>${dataLib.sampleQuantity}</td>
         <td>${dataLib.riseProgram}</td>
         <td>${dataLib.auraForm}</td>
-        <td><fmt:formatNumber value="${dataLib.auraRate}" pattern="#,##0.#"></fmt:formatNumber></td>
+        <td>${dataLib.auraRate}</td>
         
         <td>${dataLib.analyzeMethod}</td>
         <c:choose>
@@ -46,9 +46,9 @@
         		<td>${dataLib.chartFileName}</td>
 	        </c:otherwise>
         </c:choose>
-        <td><fmt:formatNumber value="${dataLib.activationEnergy}" pattern="#,##0.#"></fmt:formatNumber></td>
-        <td><fmt:formatNumber value="${dataLib.preExponentialFactor}" pattern="#,##0.#"></fmt:formatNumber></td>
-        <td><fmt:formatNumber value="${dataLib.reactionOrder}" pattern="#,##0.#"></fmt:formatNumber></td>
+        <td>${dataLib.activationEnergy}</td>
+        <td>${dataLib.preExponentialFactor}</td>
+        <td>${dataLib.reactionOrder}</td>
         <c:choose>
 	        <c:when test="${canDownload }">
 	        	<td><a href="${basePath }/attachment/downloadFileByZip.sitemesh?fileIds=${dataLib.originalDataFileIds }">${dataLib.originalDataFileNames}</a></td>
@@ -60,7 +60,7 @@
         
         <td>${dataLib.author}</td>
         <td>${dataLib.org}</td>
-        <td>${dataLib.uploadTime}</td>
+        <td><fmt:formatDate value="${dataLib.uploadTime}" type="date"/></td>
         <td>${dataLib.linkInfo}</td>
         
         <td>${dataLib.status}&nbsp;<a href="javascript:approvalHistory(this, '${dataLib.id}', '${dataLib.libType}')">审核进度</a></td>
